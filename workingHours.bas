@@ -59,6 +59,8 @@ Sub Расчет()
             date2 = Empty
             fullResult(workerId, 1) = wName
             For i = LBound(fullData, 1) To UBound(fullData, 1)
+            'надо все переделать. если предрейсовый повторяется 2 раза - сразу +12ч и переходить к следующей дате как к первой
+
                 If date1Found = False Then
                     ' If wName = fullData(i, fullNameTitle.Column) And ((LCase(fullData(i, 11)) = "допущен") Or (LCase(fullData(i, 11)) = "прошёл")) Then
                     If wName = fullData(i, fullNameTitle.Column) And LCase(fullData(i, 11)) = "допущен" Then
