@@ -104,23 +104,14 @@ writingResult:
                     ' Debug.Print "date1: ", date1
                     ' Debug.Print "date2: ", date2
                     ' Debug.Print workedHours
-                    If workedHours <= maxWorkingHours Then
-                        fullResult(workerId, 2) = fullResult(workerId, 2) + 1
-                        fullResult(workerId, 3) = fullResult(workerId, 3) + workedHours
-                        date1 = Empty
-                        date2 = Empty
-                        If Not onlyOneDate1 Then date1Found = False
-                        If Not onlyOneDate2 Then date2Found = False
-                        workedHours = Empty
-                    Else
-                        fullResult(workerId, 2) = fullResult(workerId, 2) + 1
-                        fullResult(workerId, 3) = fullResult(workerId, 3) + standardWorkingHours
-                        date1 = Empty
-                        date2 = Empty
-                        If Not onlyOneDate1 Then date1Found = False
-                        If Not onlyOneDate2 Then date2Found = False
-                        workedHours = Empty
-                    End If
+                    If workedHours <= maxWorkingHours Then workedHours = standardWorkingHours
+                    fullResult(workerId, 2) = fullResult(workerId, 2) + 1
+                    fullResult(workerId, 3) = fullResult(workerId, 3) + workedHours
+                    date1 = Empty
+                    date2 = Empty
+                    If Not onlyOneDate1 Then date1Found = False
+                    If Not onlyOneDate2 Then date2Found = False
+                    workedHours = Empty
                     If onlyOneDate1 Then date1 = fullData(i, 2)
                     onlyOneDate = False
                     onlyOneDate1 = False
